@@ -16,7 +16,7 @@ const images = [
 const elementLi = document.querySelector(`.gallery`);
 
 const elements = images.map ((image) => 
-`<li> <img  src="${image.url}" alt="${image.alt}" width: 630px;
+`<li><img  src="${image.url}" alt="${image.alt}" width: 630px;
 height: 375px></li>`)
 elementLi.insertAdjacentHTML('beforeEnd', elements);
 elementLi.style.cssText = `
