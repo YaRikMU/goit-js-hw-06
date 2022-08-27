@@ -13,18 +13,34 @@ const images = [
   },
 ];
 
-const elementLi = document.querySelector(`.gallery`);
+// const elementLi = document.querySelector(`.gallery`);
 
-const elements = images.map ((image) => 
-`<li><img  src="${image.url}" alt="${image.alt}" width: 630px;
-height: 375px></li>`)
-elementLi.insertAdjacentHTML('beforeEnd', elements);
-elementLi.style.cssText = `
+// const elements = images.map ((image) => 
+// `<li><img  src="${image.url}" alt="${image.alt}" width: 630px;
+// height: 375px></img></li>`)
+// elementLi.insertAdjacentHTML('beforeEnd', elements);
+// elementLi.style.cssText = `
 
-display: flex;
-flex-wrap: wrap;
-align-items: center;
-justify-content: center;
+// display: flex;
+// flex-wrap: wrap;
+// align-items: center;
+// justify-content: center;
 
-background-color: red;
-list-style:none;`
+// background-color: red;
+// list-style:none;`
+const list = document.querySelector('.gallery')
+
+const elements = images
+	.map(image => `<li><img class="picture" src=${image.url} width = '400' alt='${image.alt}'></img></li>`)
+	.join('')
+
+  list.insertAdjacentHTML('beforeend', elements)
+    // const img = document.createElement('img')
+  
+const pictures = document.querySelectorAll('.picture')
+
+list.style.display = 'flex';
+list.style.flexWrap = 'wpar'
+list.style.listStyle = 'none'
+list.style.gap = '20px'
+list.style.justifyContent = 'center'

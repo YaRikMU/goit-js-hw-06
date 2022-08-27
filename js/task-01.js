@@ -1,17 +1,17 @@
-const list = document.querySelector(`#categories`);
-const itemCat = list.children;
+// const list = document.querySelector(`#categories`);
+// const itemCat = list.children;
 
 
-console.log(`Number of categories: ${itemCat.length}`);
+// console.log(`Number of categories: ${itemCat.length}`);
 
-const item = document.querySelectorAll('.item');
-for (let i = 0; i < item.length; i += 1) {
-    const elementList = item[i].children;
-    const elementListTitle = elementList[0].textContent;
-    const elementListLenth = elementList[1].querySelectorAll(`li`).length;
-    console.log('Category: ', elementListTitle);
-    console.log('Elements: ', elementListLenth);
-}
+// const item = document.querySelectorAll('.item');
+// for (let i = 0; i < item.length; i += 1) {
+//     const elementList = item[i].children;
+//     const elementListTitle = elementList[0].textContent;
+//     const elementListLenth = elementList[1].querySelectorAll(`li`).length;
+//     console.log('Category: ', elementListTitle);
+//     console.log('Elements: ', elementListLenth);
+// }
 
 // const item = document.querySelectorAll('.item');
 // const nameList = document.querySelectorAll('h2');
@@ -30,3 +30,10 @@ for (let i = 0; i < item.length; i += 1) {
 // console.log(`Category: ${nameList[2].textContent}`);
 // console.log(`Elements: ${nameList[2].nextElementSibling.children.length}`);
 
+const categoriesList = document.querySelectorAll('.item');
+console.log(`Number of categories: ${categoriesList.length}`)
+
+categoriesList.forEach(item => {
+    console.log(`Category: ${item.firstElementChild.textContent}`);
+    console.log(`Elements: ${item.lastElementChild.children.length}`)
+});
